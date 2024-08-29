@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Greeting Component</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your Greeting component code will go here
+
+
+    // Greeting component
+    const Greeting = () => {
+      const msg = "hello and good evening";
+      const name = "Hrittik";
+      return (
+        <>
+          <Print msg={msg} name={name} />
+        </>
+      );
+    };
+
+    // Print component
+    const Print = ({ msg, name }) => {
+      return (
+        <div>
+          <h1>{msg} {name}</h1>
+          
+        </div>
+      );
+    };
+
+    // Rendering the Greeting component
+    ReactDOM.createRoot(document.getElementById("root")).render(<Greeting />);
+  </script>
+</html>
+

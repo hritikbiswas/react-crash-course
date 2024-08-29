@@ -1,0 +1,137 @@
+.rounded-shapes,
+.rounded-shapes1 {
+  width: 239px;
+  height: 481px;
+  transform: rotate(-15.8deg);
+}
+.rounded-shapes {
+  position: absolute;
+  top: 65.03px;
+  left: -256px;
+  filter: blur(300px);
+  border-radius: 50%;
+  background: linear-gradient(#e6bc28, #e6bc28), #fb7615;
+  transform-origin: 0 0;
+}
+.rounded-shapes1 {
+  top: 410.03px;
+  left: -159px;
+  background: linear-gradient(#fb7615, #fb7615), #fb7615;
+  z-index: 1;
+}
+.rounded-shapes1,
+.rounded-shapes2,
+.rounded-shapes3,
+.shapes-child {
+  position: absolute;
+  filter: blur(300px);
+  border-radius: 50%;
+  transform-origin: 0 0;
+}
+.shapes-child {
+  top: 79.95px;
+  left: 461px;
+  background: linear-gradient(#840ee1, #840ee1), #fb7615;
+  width: 232.4px;
+  height: 661.6px;
+  transform: rotate(-8.7deg);
+}
+.rounded-shapes2,
+.rounded-shapes3 {
+  width: 239px;
+  height: 481px;
+  transform: rotate(-15.8deg);
+}
+.rounded-shapes2 {
+  top: 410.03px;
+  left: 242px;
+  background: linear-gradient(
+      rgba(233, 21, 251, 0.32),
+      rgba(233, 21, 251, 0.32)
+    ),
+    rgba(208, 18, 189, 0.81);
+  z-index: 1;
+}
+.rounded-shapes3 {
+  top: 389.03px;
+  left: 41px;
+  background: linear-gradient(rgba(227, 15, 53, 0.32), rgba(227, 15, 53, 0.32)),
+    rgba(208, 18, 189, 0.81);
+  z-index: 2;
+}
+.rounded-shapes4,
+.rounded-shapes5,
+.rounded-shapes6 {
+  position: absolute;
+  top: 45px;
+  left: 72px;
+  background-color: #0045ad;
+  width: 219px;
+  height: 64px;
+  z-index: 1;
+}
+.rounded-shapes5,
+.rounded-shapes6 {
+  left: 312px;
+  background-color: #3ed426;
+}
+.rounded-shapes6 {
+  top: 53px;
+  left: 192px;
+  background-color: #ea0404;
+  height: 48px;
+  z-index: 2;
+}
+.rounded-shapes7 {
+  position: absolute;
+  top: 185px;
+  left: 162px;
+  border-radius: var(--br-15xl);
+  background-color: #b5b805;
+  width: 278px;
+  height: 139px;
+}
+.rounded-shapes8,
+.rounded-shapes9 {
+  border: 0;
+  outline: 0;
+  position: absolute;
+}
+.rounded-shapes8 {
+  background-color: #fb7615;
+  height: 139px;
+  width: 278px;
+  top: 345px;
+  left: 162px;
+  border-radius: var(--br-15xl);
+  z-index: 3;
+}
+.rounded-shapes9 {
+  background-color: #26bacf;
+  height: 134px;
+  width: 219px;
+  top: 264px;
+  left: 203px;
+  border-radius: 40px;
+  z-index: 4;
+}
+.shapes {
+  height: 616px;
+  flex: 1;
+  position: relative;
+  max-width: 100%;
+}
+.macbook-pro {
+  width: 582px;
+  background-color: #000;
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 51px 0 0;
+  box-sizing: border-box;
+  line-height: normal;
+  letter-spacing: normal;
+}

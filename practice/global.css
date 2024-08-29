@@ -1,0 +1,9 @@
+body {
+    margin: 0;
+    line-height: normal;
+  }
+  
+  :root {
+    /* Border radiuses */
+    --br-15xl: 34px;
+  }
