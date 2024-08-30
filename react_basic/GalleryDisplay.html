@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic List Rendering</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your ItemList component code will go here
+
+    const Gallery=({children})=>{
+      return(
+        <>
+        <div style={{display:"flex",justifyContent:"center"}}>
+          <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)", gap:"15px"}}>
+           {children}  
+        </div>  
+        </div>
+        </>
+      )
+    }
+
+
+    const App=()=>{
+      const img1 = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Cat_August_2010-4.jpg/2560px-Cat_August_2010-4.jpg";
+      const img2 = "https://upload.wikimedia.org/wikipedia/commons/2/25/Siam_lilacpoint.jpg";
+      const img3 = "https://upload.wikimedia.org/wikipedia/commons/9/9b/Gustav_chocolate.jpg";
+      const img4 = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Orange_tabby_cat_sitting_on_fallen_leaves-Hisashi-01A.jpg/1280px-Orange_tabby_cat_sitting_on_fallen_leaves-Hisashi-01A.jpg";
+      const img5 = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Felis_catus-cat_on_snow.jpg/2560px-Felis_catus-cat_on_snow.jpg";
+      const img6 = "https://upload.wikimedia.org/wikipedia/commons/5/53/Sheba1.JPG";
+
+      return(
+      <Gallery>
+      <img src={img1} alt=""  height="450px" width="250px"/>
+      <img src={img2} alt="" height="450px" width="250px"/>
+      <img src={img3} alt="" height="450px" width="250px"/>
+      <img src={img4} alt="" height="450px" width="250px"/>
+      <img src={img5} alt="" height="450px" width="250px"/>
+      <img src={img6} alt="" height="450px" width="250px"/>  
+      </Gallery>
+        
+      )
+    }
+    ReactDOM.render(<App/>, document.getElementById("root"))
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
