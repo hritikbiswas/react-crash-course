@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Components in React</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Write your code here
+
+
+
+    const Component = () => {
+      const box = "01";
+      const heading = "Find Your Template";
+      const para = "ipsum dolor sit, amet consectetur adipisicing elit. Expedita maxime quod ab ratione laudantium, unde quas perspiciatis totam necessitatibus exercitationem. Voluptates iste aperiam esse praesentium!";
+      
+      return (
+        <div style={{ margin: "20px", padding: "10px", borderRadius: "8px", textAlign: "center", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
+          <div style={{ height: "50px", width: "50px", backgroundColor: "#C6F6D4", display: "flex", justifyContent: "center", alignItems: "center" }} >
+            <h2>{box}</h2>
+          </div>
+          <div style={{ fontSize: "18px", fontWeight: "bold", margin: "10px 0" }}>{heading}</div>
+          <div style={{ fontSize: "14px", color: "#718096" }}>{para}</div>
+        </div>
+      );
+    }
+
+    const App = () => {
+      return (
+        <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", height: "100vh", backgroundColor: "#F7FAFC" }}>
+          <div style={{ marginTop: "100px", marginBottom: "40px", textAlign: "center" }}>
+            <h1>Getting Started in <span style={{ color: "#47BB78" }}>3 easy steps</span></h1>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px" }}>
+            
+            <Component />
+            <Component />
+            <Component />
+          </div>
+        </div>
+      );
+    }
+
+    ReactDOM.render(<App />, document.getElementById("root"));
+  </script>
+</body>
+</html>
