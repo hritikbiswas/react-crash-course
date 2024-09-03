@@ -2,31 +2,50 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>JSX and Babel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
   </head>
   <body>
     <div id="root"></div>
-    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script type="text/babel">
-      const App = () => {
-        return (
-          <>
-            <div style={{ textAlign: 'center', margin: '20px', padding: '20px', border: '1px solid #ddd' }}>
-              <h1 style={{ color: '#333' }}>Welcome to My Page</h1>
-              <p style={{ fontSize: '18px', color: '#666' }}>
-                This is a simple example of JSX and inline styles.
-              </p>
-              <button style={{ padding: '10px 20px', backgroundColor: '#007BFF', color: 'white', border: 'none', borderRadius: '5px' }}>
-                Click Me
-              </button>
-            </div>
-          </>
-        );
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    const App = () => {
+      const [color, setColor] = React.useState("");
+      const [isValid, setIsValid] = React.useState(true);
+
+      const handleChange = (e) => {
+        const value = e.target.value;
+        setColor(value);
+
+        // Regular expression to validate HEX color code
+        const isValidHex = /^#([0-9A-F]{3}){1,2}$/i.test(value);
+        setIsValid(isValidHex);
       };
 
-      ReactDOM.createRoot(document.getElementById('root')).render(<App />);
-    </script>
-  </body>
+      return (
+        <>
+          <input
+            type="text"
+            value={color}
+            onChange={handleChange}
+            placeholder="Enter HEX color code"
+          />
+          <div
+            style={{
+              width: "100px",
+              height: "100px",
+              border: "2px solid black",
+              backgroundColor: isValid ? color : "transparent",
+            }}
+          ></div>
+          {!isValid && <p>Please enter a valid HEX color code.</p>}
+        </>
+      );
+    };
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+  </script>
 </html>

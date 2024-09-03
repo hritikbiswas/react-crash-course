@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your  code will go here
+
+    const App=()=>{
+
+      const [color,setColor]=React.useState("");
+      const [isValid,setValid]=React.useState(true);
+
+      const hamdleChange=(e)=>{
+        const value=e.target.value;
+        setColor(value)
+
+        const isValidHex = /^#([0-9A-F]{3}){1,2}$/i.test(value);
+        setValid(isValidHex);
+      }
+      return(
+        <>
+         <div>
+          <input type="text"
+          placeholder="enter your color code"
+          onChange={hamdleChange}
+          value={color}
+          /> 
+         </div>
+         <div style={{
+          height:"500px",
+          width:"500px",
+          border:"2px solid black",
+          backgroundColor:isValid?color:"transparent"
+         }}></div>
+         {!isValid && <p>Please enter the valid color code</p>}
+        </>
+      )
+    }
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App/>)
+  </script>
+</html>
