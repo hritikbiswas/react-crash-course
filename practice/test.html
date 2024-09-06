@@ -1,43 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-.rounded-shapes,
-.rounded-shapes1 {
-  width: 239px;
-  height: 481px;
-  transform: rotate(-15.8deg);
-  
-}
-.rounded-shapes {
-  position: absolute;
-  top: 65.03px;
-  left: -256px;
-  filter: blur(300px);
-  border-radius: 50%;
-  background: linear-gradient(#e6bc28, #e6bc28), #fb7615;
-  transform-origin: 0 0;
-}.rounded-shapes1 {
-  top: 410.03px;
-  left: -159px;
-  background: linear-gradient(#fb7615, #fb7615), #fb7615;
-  z-index: 1;
-}
-.rounded-shapes1 {
-  position: absolute;
-  filter: blur(300px);
-  border-radius: 50%;
-  transform-origin: 0 0;
-}
-    </style>
-</head>
-<body>
+import React, { useEffect, useState } from 'react';
+import axios from "axios";
+
+function Trail() {
+  const [mydata, setMydata] = useState([]);
+  const URL = "https://jsonplaceholder.typicode.com/photos";
+
+  useEffect(() => {
+    function displayData() {
+      axios.get(URL)
+        .then((res) => {
+          setMydata(res.data);
+        }).catch((err) => {
+          console.log("err", err);
+        });
+    }
+    displayData();
+  }, []);
+
+  return (
     <div>
-        <div class="rounded-shapes"></div>
-          <div class="rounded-shapes1"></div>
+      <h2>Fetching Data</h2>
+      <div>
+        {mydata.map((item) => (
+          <div key={item.id}>
+            <h3>{item.title}</h3>
+            <div>
+              <img src={item.url} alt={item.title} />
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
-</body>
-</html>
+  );
+}
+
+export default Trail;

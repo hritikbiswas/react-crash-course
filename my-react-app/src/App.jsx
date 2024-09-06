@@ -2,6 +2,7 @@ import React from 'react';
 import UseEffect from './components/UseEffect';
 import Trail from './components/Trail';
 import CleanUpFunc from './components/CleanUpFunc';
+import CounterApp from './components/CounterApp';
 
 
 function App() {
@@ -9,7 +10,8 @@ function App() {
     <div>
       {/* <UseEffect/> */}
       {/* <Trail/> */}
-      <CleanUpFunc/>
+      {/* <CleanUpFunc/> */}
+      <CounterApp/>
     </div>
   )
 }
