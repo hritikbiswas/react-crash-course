@@ -3,6 +3,7 @@ import UseEffect from './components/UseEffect';
 import Trail from './components/Trail';
 import CleanUpFunc from './components/CleanUpFunc';
 import CounterApp from './components/CounterApp';
+import Useref1 from './components/useref/Useref1';
 
 
 function App() {
@@ -11,7 +12,8 @@ function App() {
       {/* <UseEffect/> */}
       {/* <Trail/> */}
       {/* <CleanUpFunc/> */}
-      <CounterApp/>
+      {/* <CounterApp/> */}
+      <Useref1/>
     </div>
   )
 }
